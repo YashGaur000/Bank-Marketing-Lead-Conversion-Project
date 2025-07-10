@@ -10,7 +10,7 @@ If I had more time, I would explore hyperparameter tuning to boost performance, 
 
 1. (Recommended) Create and activate a virtual environment:
 
-   py -3.11.9 -m venv venv
+   py -3.11.9 -m venv venv then 
    run ".\venv/bin/activate"
 
 2. Install required packages:
