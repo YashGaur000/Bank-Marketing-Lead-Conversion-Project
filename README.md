@@ -1,11 +1,7 @@
 Project Summary
 
-This project aimed to predict whether a customer would subscribe to a term deposit based on a marketing campaign dataset. Initially, I tried a basic Random Forest model after cleaning and one-hot encoding the data. It gave decent accuracy approx. 90%, but I noticed a strong class imbalance most people in the dataset said "no", which biased the model.
+In this project, I worked on predicting whether a customer would subscribe to a term deposit after a marketing campaign. What worked well was the overall flow of the project — cleaning the data, handling missing values, and using one-hot encoding to prepare the dataset. I used Random Forest as the main model, which gave good results, especially after applying SMOTE to fix the class imbalance. The recall and F1 score for the “yes” class improved, which was the main goal.
 
-To improve performance, I used SMOTE to balance the training data. After applying SMOTE, the overall accuracy dropped slightly, but the recall and F1 score for the minority class (those who said "yes") improved. Since the goal is to identify more potential leads, this trade-off was actually a good thing.
+What didn’t work as well was mode-based imputation for the 'poutcome' column, since over 80% of the values were "unknown". Replacing such a large chunk of data didn’t seem helpful, so I decided to keep "unknown" as its own category. Also, while the model did okay, it still struggled a bit with false positives.
 
-Some features like 'pdays' and 'default' didn’t seem to contribute much and might be dropped in future versions. Also, after one-hot encoding, the number of columns increased a lot, which I handled using drop_first=True.
-
-If I had more time, I would try tuning the model hyperparameters, testing ensemble methods like XGBoost, and exploring more meaningful feature engineering. I’d also like to experiment with calibration to get better probability scores instead of just hard classifications.
-
-Overall, this was a great hands-on project to understand EDA, preprocessing, and model evaluation, especially with imbalanced data.
+If I had more time, I would explore hyperparameter tuning to boost performance, try models like XGBoost, and do some feature engineering like grouping age into bins or combining similar job types. I’d also look into model explainability to understand which features mattered the most.
